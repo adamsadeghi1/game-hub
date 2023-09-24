@@ -1,6 +1,7 @@
 import {
   Button,
   HStack,
+  Heading,
   Image,
   List,
   ListItem,
@@ -24,6 +25,9 @@ const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
   // if (isLoading) return <Spinner />;
   return (
     <>
+      <Heading fontSize="2xl" marginBottom={3}>
+        Genre
+      </Heading>
       {isLoading && skeleton.map((item) => <GenreSkeleton key={item} />)}
       <List>
         {!isLoading &&
@@ -34,6 +38,7 @@ const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
                   src={getCropedImageUrl(genre.image_background)}
                   boxSize="32px"
                   borderRadius={8}
+                  objectFit="cover"
                 />
                 <Button
                   fontSize="lg"
@@ -42,6 +47,8 @@ const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
                   fontWeight={
                     genre.id === selectedGenre?.id ? "bold" : "normal"
                   }
+                  whiteSpace="normal"
+                  textAlign="left"
                 >
                   {genre.name}
                 </Button>
