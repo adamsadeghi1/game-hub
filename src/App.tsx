@@ -48,7 +48,7 @@ function App() {
       <GridItem area="main">
         <Box padding={2}>
           <PageHeading gameQuery={gameQuery} />
-          <HStack spacing={2} marginBottom={5}>
+          <HStack spacing={2} marginBottom={4}>
             <PlatformList
               selectedPlatform={gameQuery.platform}
               onSelectedPlatfome={(platform) =>
