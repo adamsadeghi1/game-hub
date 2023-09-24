@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL:'http://localhost:8080/api/rawg',
+    baseURL:'http://localhost:8081/api/rawg',
 });
 
