@@ -1,8 +1,16 @@
+import { useQuery } from "@tanstack/react-query";
+import platformService, { Platform } from "../services/platformService";
 import useData from "./useData";
-import { Platform } from "./useGame";
+import platforms from "../data/platforms";
 
 
 
-const usePlatform = () => useData<Platform>('/platforms');
+
+const usePlatform = () => useQuery({
+    queryKey: ["platforms"],
+    queryFn: platformService.getAll,
+    staleTime: 10 * 60 * 1000, //10m
+    initialData: platforms
+});
 
 export default usePlatform;
