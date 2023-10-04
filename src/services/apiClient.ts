@@ -1,6 +1,9 @@
-import apiClient from "./api-client";
+import axios, { AxiosRequestConfig } from "axios";
 
-const axiosInstance = apiClient;
+
+const axiosInstance = axios.create({
+    baseURL:'http://10.0.0.171:3001/api/',
+});
 
 class APIClient<T> {
     endpoint : string;
@@ -8,12 +11,12 @@ class APIClient<T> {
         this.endpoint =endpoint;
     }
 
-    getAll= ()=>{
-       return axiosInstance.get<T[]>(this.endpoint).then(res=>res.data);
+    getAll= (requestconfig?: AxiosRequestConfig)=>{
+       return axiosInstance.get<T[]>(this.endpoint,requestconfig).then(res=>res.data);
     }
 
-    post = (data:T)=>{
-        return axiosInstance.post<T>(this.endpoint, data)
+    post = (data:T,requestconfig?: AxiosRequestConfig)=>{
+        return axiosInstance.post<T>(this.endpoint, data,requestconfig)
         .then(res=>res.data)
     }
 }
