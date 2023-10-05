@@ -9,5 +9,9 @@ export interface Game {
     metacritic: number,
     rating_top: number
   }
+export interface GameFinalResult{
+  next: string| null;
+  results: Game[]
+}
   
-export default new APIClient<Game>("/games");
+export default new APIClient<GameFinalResult>("/games");

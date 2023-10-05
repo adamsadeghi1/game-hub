@@ -19,6 +19,10 @@ class APIClient<T> {
         return axiosInstance.post<T>(this.endpoint, data,requestconfig)
         .then(res=>res.data)
     }
+
+    get = (requestconfig?: AxiosRequestConfig)=>{
+        return axiosInstance.get<T>(this.endpoint,requestconfig).then(res=>res.data);
+    }
 }
 
 export default APIClient;
