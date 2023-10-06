@@ -15,6 +15,7 @@ git clonet https://github.com/adamsadeghi1/game-hub-back-nestJs.git
 ```
 
 Running back-end is exactly the same as running front-end (by runnign ```npm run start:docker``` it will start on port ```3001```). Just you need to create an API key in Rawg portal.
+
 1- go to following address:
 ```
 https://rawg.io/login?forward=developer
