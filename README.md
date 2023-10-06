@@ -6,7 +6,7 @@ To run the application you need to have Docker and npm installed on your machin,
 npm run start:docker
 ```
 
-The app will start on port: `5180` on a docker container in your host.
+The app will start on port: `5180` on a docker container in your computer.
 
 At this point you need back-end system to talk to actual Rawg api and return the process data. You can use game-hub backend from following address
 
@@ -23,8 +23,8 @@ https://rawg.io/login?forward=developer
 
 3- In your back-end project folder open ```.env.example``` file and change the value of ```RAWG_API_KEY``` with the actual value you get from Rawg website.
 
-4- **Important!!** change the name of ```.env.example``` file to ```.env``` and done!!!.
-start the bach-end app with ```npm run start:docker```.
+4- **Important!!** change the name of ```.env.example``` file to ```.env``` , and done!!!.
+start the back-end app with ```npm run start:docker```.
 
 ## Note
 
