@@ -32,5 +32,5 @@ start the back-end app with ```npm run start:docker```.
 If you encounter a permission error while runnig the app, run the following command in the root of application:
 
 ```
-chmod +x ./start-app.sh
+chmod +x start-app.sh
 ```
