@@ -52,7 +52,7 @@ function App() {
           <HStack spacing={2} marginBottom={4}>
             <PlatformList
               selectedPlatformId={gameQuery.platformId}
-              onSelectedPlatfome={(platformId) =>
+              onSelectedPlatform={(platformId) =>
                 setGameQuery({ ...gameQuery, platformId })
               }
             />

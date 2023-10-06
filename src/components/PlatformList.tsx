@@ -1,16 +1,17 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import usePlatform from "../hooks/usePlatforms";
-import { Platform } from "../services/platformService";
+import usePlatforms from "../hooks/usePlatforms";
+import usePlatform from "../hooks/usePlatform";
 
 interface Props {
-  onSelectedPlatfome: (platformId?: number) => void;
+  onSelectedPlatform: (platformId?: number) => void;
   selectedPlatformId?: number;
 }
 
-const PlatformList = ({ onSelectedPlatfome, selectedPlatformId }: Props) => {
-  const { data, error } = usePlatform();
-  const selectedPlatform = data.find((p) => p.id === selectedPlatformId);
+const PlatformList = ({ onSelectedPlatform, selectedPlatformId }: Props) => {
+  const { data, error } = usePlatforms();
+  const selectedPlatform = usePlatform(selectedPlatformId);
+
   if (error) return null;
   return (
     <Menu>
@@ -21,7 +22,7 @@ const PlatformList = ({ onSelectedPlatfome, selectedPlatformId }: Props) => {
         {data?.map((platform) => (
           <MenuItem
             key={platform.id}
-            onClick={() => onSelectedPlatfome(platform.id)}
+            onClick={() => onSelectedPlatform(platform.id)}
           >
             {platform.name}
           </MenuItem>
