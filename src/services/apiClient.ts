@@ -22,6 +22,7 @@ class APIClient<T> {
 
     get = (requestconfig?: AxiosRequestConfig)=>
          axiosInstance.get<T>(this.endpoint,requestconfig).then(res=>res.data);
+         
     getById = (id?: string | number ) => 
          axiosInstance.get<T>(this.endpoint + '/'+ id).then(res=>res.data);
 }
