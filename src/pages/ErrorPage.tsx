@@ -8,7 +8,7 @@ const ErrorPage = () => {
   return (
     <>
       <NavBar />
-      <Box paddingLeft={5}>
+      <Box padding={5}>
         <Heading as="h1" fontSize="6xl" marginBottom={4}>
           Oops
         </Heading>

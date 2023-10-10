@@ -3,8 +3,10 @@ import { Platform } from "./platformService";
 
 export interface Game {
     id: number;
+    slug: string;
     name: string;
-    background_image: string,
+    description_raw: string;
+    background_image: string;
     parent_platforms :Platform[],
     metacritic: number,
     rating_top: number
