@@ -1,10 +1,12 @@
-import { Box, Button, Heading, Spinner, Text } from "@chakra-ui/react";
-import useGame from "../hooks/useGame";
+import { Box, Button, Heading, Spinner } from "@chakra-ui/react";
 import { useNavigate, useParams } from "react-router-dom";
+import ExpandableText from "../components/ExpandableText";
+import useGame from "../hooks/useGame";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
   const { data: game, isLoading, error } = useGame(slug!);
+
   const navigator = useNavigate();
 
   if (isLoading) return <Spinner />;
@@ -13,7 +15,7 @@ const GameDetailPage = () => {
   return (
     <Box paddingLeft={5}>
       <Heading>{game.name}</Heading>
-      <Text>{game.description_raw}</Text>
+      <ExpandableText>{game.description_raw}</ExpandableText>
       <Button
         colorScheme="gray"
         variant="solid"
