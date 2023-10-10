@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import platformService, { Platform } from "../services/platformService";
-import platforms from "../data/platforms";
 import ms from "ms";
+import platforms from "../data/platforms";
+import platformService from "../services/platformService";
 
 const usePlatforms = () => useQuery({
     queryKey: ["platforms"],
