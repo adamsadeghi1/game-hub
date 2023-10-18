@@ -1,6 +1,6 @@
-import { Game } from "./Game";
+import  Game  from "./Game";
 
-export interface GameFinalResult {
+export default interface GameFinalResult {
   next: string | null;
   results: Game[];
 }
